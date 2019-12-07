@@ -3,7 +3,11 @@
    <calendar v-model="now"></calendar>
    <div class='clock'>
      <clock ></clock>
+     <div>
+     您好，面试官！
    </div>
+   </div>
+   
  </div>
 </template>
 
