@@ -51,7 +51,7 @@ export default {
 }
 .hour {
   width: 3px;
-  height: 100px;
+  height: 80px;
   background: pink;
   position: absolute;
   background:linear-gradient(to bottom,pink 50%,transparent 50%);
@@ -60,11 +60,11 @@ export default {
 
 .min {
   width: 3px;
-  height: 100px;
+  height: 120px;
   background: red;
   position: absolute;
   background:linear-gradient(to bottom,red 50%,transparent 50%);
-  z-index 999l
+  z-index 999;
 }
 
 

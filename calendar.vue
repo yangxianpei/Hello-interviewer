@@ -1,7 +1,7 @@
 <template>
   <div v-outside>
     <div class='hider'>
-      <div class="pannel-nav" v-for="(item,index) in visibleDays.slice(7,14)" :key='index'>
+      <div class="pannel-nav" v-for="(item,index) in getSevenDate" :key='index'>
         <span>
           {{basisInfo[index]}}
         </span>
@@ -87,13 +87,12 @@ export default {
       return year == y && month == m && day == d
     },
     changeDay(d){
-      console.log(d);
       this.$emit('input',d)
     }
   },
   mounted() {
     //  this.visibleDays
-    console.log();
+    this.getSevenDate()
   },
   computed: {
     visibleDays() {
@@ -115,6 +114,16 @@ export default {
       let arr = []
       for (let i = 0; i < 42; i++) {
         arr.push(new Date(startDay + i * 60 * 60 * 1000 * 24))
+      }
+      return arr
+    },
+     getSevenDate(){
+      let today = new Date();
+      let weekNuber= today.getDay();
+      let start=today-weekNuber*60*60*1000*24;
+      let arr=[]
+      for(let i =0;i<7;i++){
+          arr.push(new Date(start+i*60*60*1000*24))
       }
       return arr
     },
